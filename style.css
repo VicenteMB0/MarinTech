@@ -1,0 +1,440 @@
+/* CUERPO PÁGINA */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; 
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333333; 
+}
+
+.navbar a {
+    color: #ffffff;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #555555; 
+    color: #ffffff;
+}
+
+.navbar a.active {
+    background-color: #777777; 
+    color: #ffffff;
+}
+
+#inicio, #servicios, #clientes, #sobre-nosotros, #contacto {
+    display: none; 
+}
+
+/* TÍTULO */
+.title {
+    display: flex;
+    align-items: center;       
+    justify-content: center;   
+    margin-top: 20px;
+    position: relative;       
+    text-align: center; 
+    background-color: #e0e0e0; 
+    font-size: 20px;
+    color: #333333;
+}
+
+.title img {
+    position: absolute;
+    left: 100px; 
+    width: 110px; 
+    height: 110px; 
+    object-fit: cover; 
+}
+
+/* IMAGEN PRINCIPAL Y LOGO*/
+.img_principal {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo {
+    cursor: pointer;
+}
+
+/* CONTENEDOR */
+.container {
+    background-color: #e0e0e0; 
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px; 
+    width: 75%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    color: #333333; 
+}
+
+.container h1 {
+    margin-bottom: 15px;
+    color: #b30000; 
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.container .active {
+    display: block;
+}
+
+/* TEXTO DEL TÍTULO Y DESARROLLO */
+.st-main {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #b30000; 
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    letter-spacing: 1.5px; 
+}
+
+.text-main {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    margin: 0 auto 20px auto;
+    line-height: 1.6; 
+    max-width: 80%; 
+}
+
+.text-main p {
+    margin-bottom: 15px;
+}
+
+.text-main p:last-child {
+    margin-bottom: 0;
+}
+
+.text-main::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #b30000; 
+    margin: 0 auto 20px auto; 
+}
+
+.text-main::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #b30000; 
+    margin: 20px auto 0 auto; 
+}
+
+/* SERVICIOS */
+.service-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 22%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+}
+
+.contact-button {
+    text-decoration: none; 
+    color: white; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #b30000; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-button:hover {
+    background-color: #990000;
+}
+
+.contact-button i {
+    margin-right: 8px; 
+    font-size: 16px;   
+}
+
+/* SOBRE NOSOTROS */
+.about-section {
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: #c40000; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff; 
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+    position: relative;
+}
+
+.about-title::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #b30000; 
+    margin: 0 auto 15px auto; 
+}
+
+.about-section p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333333; 
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+/* CONTENIDO DENTRO DE LA PÁGINA Y BOTONES */
+.collapsible {
+    background: linear-gradient(135deg, #b30000, #a30000); 
+    color: #ffffff; 
+    cursor: pointer; 
+    padding: 15px;
+    width: 100%; 
+    border: none;
+    text-align: left; 
+    outline: none; 
+    font-size: 19px; 
+    transition: background 0.3s ease;
+    border-radius: 5px; 
+    margin: 5px 0; 
+}
+
+.collapsible:hover {
+    background: linear-gradient(135deg, #a30000, #990000); 
+}
+
+.collapsible.active, .collapsible:focus {
+    background: linear-gradient(135deg, #990000, #b30000); 
+}
+
+.collapsible-content {
+    display: none; 
+    padding: 15px; 
+    background-color: #ecebeb; 
+    border-radius: 0 0 5px 5px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    color: #000000; 
+    font-size: 19px;
+}
+
+.collapsible-content.mission-promise {
+    text-align: center; 
+}
+
+.collapsible-content.services {
+    text-align: left; 
+}
+
+.collapsible-content.mission-promise p {
+    margin: 0; 
+}
+
+.collapsible-content.services p {
+    margin: 0; 
+}
+
+/* CARRUSEL */
+.carousel-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0; 
+    padding: 10px;
+    border-radius: 10px;
+    width: 76%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+#carousel-logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    object-fit: cover; 
+}
+
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+#carousel-image {
+    max-width: 835px; 
+    max-height: 436px; 
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; 
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; 
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 50px; 
+    height: 50px; 
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease; 
+    user-select: none;
+    background-color: #a30000; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 10; 
+}
+
+.next {
+    right: 40px; 
+}
+
+.prev {
+    left: 40px; 
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(163, 0, 0, 0.8); 
+}
+
+/* FORMULARIO DE CONTACTO */
+#contact-form {
+    background-color: #ecebeb; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333333; 
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form-group input, .form-group textarea {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #b30000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #a30000; 
+    outline: none;
+}
+
+.button-group {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+button[type = "submit"] {
+    background-color: #b30000; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type = "submit"]:hover {
+    background-color: #990000; 
+}
+
+/* CHATBOT */
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e63946; 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.chatbot-button:hover {
+    background-color: #d62839; 
+}
+

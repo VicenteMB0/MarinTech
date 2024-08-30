@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarínTech</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "icon" href = "imagenes/logo.png" type = "image/png">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//code.tidio.co/aio2fjl11znecoi6tbqpeqmxjrzmrfzp.js" async></script>
+</head>
+
+<body>
+    
+    <div class = "title">
+        <h1>MarínTech</h1>
+        <img id = "logo" src = "imagenes/logo.png" alt = "MarínTech-Logo">
+    </div>
+    
+    <div class = "navbar">
+        <a href = "#inicio">Inicio</a>
+        <a href = "#servicios">Servicios</a>
+        <a href = "#sobre-nosotros">Sobre Nosotros</a> 
+        <a href = "#clientes">Clientes</a>
+        <a href = "#contacto">Contacto</a>
+    </div>
+
+    <div class = "carousel-container">
+        <img id = "carousel-logo" src = "imagenes/logo.png" alt = "MarínTech-Logo">
+        <div class = "carousel">
+            <button class = "prev" onclick = "changeSlide(-1)">&#10094;</button>
+            <div class = "slide">
+                <img id = "carousel-image" src = "imagenes/hdd.jpeg" alt = "Cambio de Discos">
+            </div>
+            <button class = "next" onclick = "changeSlide(1)">&#10095;</button>
+        </div>
+    </div>    
+
+    <div class = "container">
+        <!-- INICIO -->
+        <div id = "inicio">
+            <img src = "imagenes/servicio.jpg" alt = "Imagen-Principal" class = "img_principal">
+
+            <div class = "st-main">
+                <p>Nosotros te ayudaremos!</p>
+            </div>
+            
+            <div class = "text-main">
+                <p> En MarínTech ofrecemos servicio técnico especializado para todo tipo de notebooks. 
+                Realizamos cambios de discos, actualizaciones de hardware, limpieza interna y más. 
+                </p>
+                <p></p>
+                <p>Nos comprometemos a brindar la más alta calidad en atención y servicio, 
+                trabajando de manera transparente para ganar tu confianza.</p>
+            </div>
+        </div>
+
+        <!-- SERVICIOS -->
+        <div id = "servicios">
+            <h1 class = "titulo">Servicios</h1>
+
+            <div class = "service-section">
+                <div class = "service-item">
+                    <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" class = "service-image">
+                    <h2>Cambio de discos</h2>
+                    <p>Cambiamos discos.</p>
+                    <a href = "https://wa.me/978563862?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20cambio%20de%20discos."
+                    target = "_blank" class = "contact-button">
+                        <i class = "fab fa-whatsapp"></i> Contáctanos
+                    </a>
+                </div>
+
+                <div class = "service-item">
+                    <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" class = "service-image">
+                    <h2>Limpieza interna</h2>
+                    <p>Limpiamos el pc.</p>
+                    <a href = "https://wa.me/978563862?text=Hola,%20quiero%20más%20información%20sobre%20la%20limpieza%20interna."
+                    target = "_blank" class = "contact-button">
+                        <i class = "fab fa-whatsapp"></i> Contáctanos
+                    </a>
+                </div>
+
+                <div class = "service-item">
+                    <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" class = "service-image">
+                    <h2>Cambio de Pasta</h2>
+                    <p>Cambiamos la pasta.</p>
+                    <a href = "https://wa.me/978563862?text=Hola,%20necesito%20el%20servicio%20de%20cambio%20de%20pasta%20térmica."
+                    target = "_blank" class = "contact-button">
+                        <i class = "fab fa-whatsapp"></i> Contáctanos
+                    </a>
+                </div>
+
+                <div class = "service-item">
+                    <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" class = "service-image">
+                    <h2>Recuperar Datos</h2>
+                    <p>Recuperamos datos.</p>
+                    <a href = "https://wa.me/978563862?text=Hola,%20quiero%20recuperar%20datos%20del%20disco%20duro."
+                    target = "_blank" class = "contact-button">
+                        <i class = "fab fa-whatsapp"></i> Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOBRE NOSOTROS -->
+        <div id="sobre-nosotros">
+            <h1 class="titulo">Sobre Nosotros</h1>
+            
+            <div class="collapsible-section">
+                <button class="collapsible"> Misión</button>
+                <div class="collapsible-content mission-promise">
+                    <p>En MarínTech, creemos que todos merecen acceso a un soporte técnico confiable y 
+                        asequible para sus notebooks, sin comprometer la calidad o la seguridad de su equipo.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <button class="collapsible"> Promesa</button>
+                <div class="collapsible-content mission-promise">
+                    <p>En MarínTech, garantizamos la confianza de nuestros clientes a través de un servicio de alta calidad. 
+                        Gracias a nuestra experiencia, podemos simplificar los procesos y 
+                        ofrecer precios justos que reflejan el verdadero valor del trabajo realizado.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <button class="collapsible"> Servicios</button>
+                <div class="collapsible-content services">
+                    <p>Actualmente, en MarínTech ofrecemos los siguientes servicios especializados en notebooks:</p>
+                    <ul>
+                        <li>Cambios de discos duros</li>
+                        <li>Recuperación de datos</li>
+                        <li>Limpieza interna</li>
+                        <li>Cambio de pasta térmica</li>
+                        <li>Mejoras de hardware</li>
+                    </ul>
+                    <p>Nos enfocamos en notebooks para asegurar la más alta calidad, 
+                        y pronto expandiremos nuestros servicios a computadores de escritorio conforme 
+                        adquiramos más experiencia en este campo.</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- CLIENTES -->
+         <div id = "clientes">
+            <h1 class = "titulo"> Clientes </h1>
+            <p> Información de los clientes. </p>
+        </div>
+
+        <!-- CONTACTO -->
+        <div id = "contacto">
+            <h1 class = "titulo">Contáctanos</h1>
+            
+            <form id = "contact-form" action = "emails.php" method = "post">
+
+                <div class = "form-group">
+                    <label for = "name">Nombre y Apellido </label>
+                    <input type = "text" id = "name" name = "name" placeholder = "Nombre completo" required>
+                </div>
+
+                <div class = "form-group">
+                    <label for = "phone">Número de Contacto</label>
+                    <input type = "tel" id = "phone" name = "phone" 
+                           pattern = "(\+569|569)[0-9]{8}" 
+                           placeholder = "+569XXXXXXXX" 
+                           required>
+                </div>
+                
+                <div class = "form-group">
+                    <label for = "email">Correo Electrónico</label>
+                    <input type = "email" id = "email" name = "email" placeholder = "tucorreo@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for = "message">Mensaje</label>
+                    <textarea id = "message" name = "message" rows = "7" placeholder = "Escribe aquí tu consulta o comentario." required></textarea>
+                </div>
+
+                <div class = "form-group button-group">
+                    <button type = "submit" class = "contact-button">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- FUNCIONES -->
+    <script src = "script.js"></script>
+    
+    <!-- BOTÓN DE CHAT 
+        <div class = "chatbot-button" onclick = "openChatbot()">
+            <i class = "fas fa-comment-dots"></i>
+        </div>
+        -->
+
+        
+</body>
+</html>

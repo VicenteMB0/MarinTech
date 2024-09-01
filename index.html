@@ -35,7 +35,7 @@
         <div class = "carousel">
             <button class = "prev" onclick = "changeSlide(-1)">&#10094;</button>
             <div class = "slide">
-                <img id = "carousel-image" src = "imagenes/hdd.jpeg" alt = "Cambio de Discos">
+                <img id = "carousel-image" src = "imagenes/hdd.jpeg" alt = "Upgrade de componentes">
             </div>
             <button class = "next" onclick = "changeSlide(1)">&#10095;</button>
         </div>
@@ -68,12 +68,13 @@
             <div class = "service-section">
                 <div class = "service-row">
                     <div class = "service-item">
-                        <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" class = "service-image">
+                        <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" 
+                        onclick = "expandirServicio('servicio1')" class = "service-image">
                         <h2>Upgrade</h2>
                         <p>Asesoramos y realizamos upgrade de componentes, como cambio de discos duros y memoria ram, 
                             optimizando el rendimiento de tu notebook según tus necesidades.</p>
                         <div class = "button-container">
-                            <a href = "https://wa.me/978563862?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20cambio%20de%20discos." 
+                            <a href = "https://wa.me/978563862?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20upgrade%20de%20componentes." 
                             target = "_blank" class = "contact-button">
                                 <i class="fab fa-whatsapp"></i> Contáctanos
                             </a>
@@ -81,10 +82,11 @@
                     </div>
 
                     <div class = "service-item">
-                        <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" class = "service-image">
+                        <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" 
+                        onclick = "expandirServicio('servicio2')" class = "service-image">
                         <h2>Limpieza interna</h2>
-                        <p>Realizamos una limpieza interna profunda de tu notebook, eliminando el polvo y residuos 
-                            acumulados para optimizar el rendimiento y extender la vida útil de los componentes.</p>
+                        <p>Realizamos una limpieza interna profunda de tu notebook, eliminando el polvo
+                            acumulado para optimizar el rendimiento y extender la vida útil de los componentes.</p>
                         <div class = "button-container">
                             <a href = "https://wa.me/978563862?text=Hola,%20quiero%20más%20información%20sobre%20la%20limpieza%20interna." 
                             target = "_blank" class = "contact-button">
@@ -94,7 +96,8 @@
                     </div>
 
                     <div class = "service-item">
-                        <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" class = "service-image">
+                        <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" 
+                        onclick = "expandirServicio('servicio3')" class = "service-image">
                         <h2>Cambio de Pasta</h2>
                         <p>Reemplazamos la pasta térmica de tu procesador y GPU, asegurando una mejor disipación del calor 
                             y evitando el sobrecalentamiento que puede dañar tu equipo.</p>
@@ -109,7 +112,8 @@
 
                 <div class = "service-row service-row-center">
                     <div class = "service-item">
-                        <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" class = "service-image">
+                        <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" 
+                        onclick = "expandirServicio('servicio4')" class = "service-image">
                         <h2>Recuperar Datos</h2>
                         <p>Recuperamos datos y archivos perdidos o dañados de tu disco duro, 
                             asegurando la máxima recuperación posible de información valiosa en tu notebook.</p>
@@ -124,6 +128,14 @@
             </div>
         </div>
 
+        <!-- DETALLE DE LOS SERVICIOS -->
+        <section id = "detalle-servicio" class = "oculto">
+            <img id="imagen-servicio" src = "" alt = "" class = "detalle-imagen">
+            <h2 id = "titulo-servicio"></h2>
+            <p id = "descripcion-servicio"></p>
+            <button class = "back-button" onclick = "volver()"> <i class="fas fa-arrow-left"></i> Volver</button>
+        </section>
+        
         <!-- SOBRE NOSOTROS -->
         <div id="sobre-nosotros">
             <h1 class="titulo">Sobre Nosotros</h1>

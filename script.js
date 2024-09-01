@@ -155,22 +155,57 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 
-// CHATBOT
-function openChatbot() {
-    Swal.fire({
-        title: 'Chatbot Carlita',
-        input: 'text',
-        inputPlaceholder: 'Escribe tu consulta aquí...',
-        showCancelButton: true,
-        confirmButtonText: 'Enviar',
-        cancelButtonText: 'Cerrar',
-        preConfirm: (message) => {
-            if (message) {
-                // Aquí podrías manejar la respuesta del chatbot o enviar el mensaje a un servidor
-                Swal.fire(`Gracias por tu consulta: "${message}"`, '', 'success');
-            } else {
-                Swal.fire('Por favor, escribe un mensaje.', '', 'warning');
-            }
-        }
-    });
+// DETALLE SERVICIO
+function expandirServicio(servicio) {
+    let titulo, descripcion, imagen;
+
+    switch(servicio) {
+        case 'servicio1':
+            titulo = 'Upgrade de Piezas';
+            descripcion = 'EXPLICAR LA IMPORTANCIA DEL CAMBIO DE COMPONENTES, POR EJEMPLO HDD VS SSD';
+            imagen = 'imagenes/hdd.jpeg';
+            break;
+        case 'servicio2':
+            titulo = 'Limpieza Interna';
+            descripcion = 'Realizamos una limpieza exhaustiva de tu notebook, mejorando su rendimiento y evitando sobrecalentamientos...';
+            imagen = 'imagenes/limpieza_hardware.jpeg';
+            break;
+        case 'servicio3':
+            titulo = 'Cambio de Pasta Térmica';
+            descripcion = 'Cambiamos la pasta térmica de tu procesador para asegurar un mejor rendimiento y mayor vida útil...';
+            imagen = 'imagenes/pasta_termica.jpeg';
+            break;
+        case 'servicio4':
+            titulo = 'Recuperación de Datos';
+            descripcion = 'Recuperamos tus datos de discos duros dañados o formateados accidentalmente...';
+            imagen = 'imagenes/recuperar_datos.jpeg';
+            break;
+        default:
+            return;
+    }
+
+    document.getElementById('titulo-servicio').textContent = titulo;
+    document.getElementById('descripcion-servicio').textContent = descripcion;
+    document.getElementById('imagen-servicio').src = imagen;
+
+    document.getElementById('servicios').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('servicios').style.display = 'none';
+        document.getElementById('detalle-servicio').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('detalle-servicio').classList.add('mostrar');
+            document.getElementById('imagen-servicio').classList.add('fade-in', 'show');
+        }, 10); 
+    }, 300); 
+}
+
+function volver() {
+    document.getElementById('detalle-servicio').classList.remove('mostrar');
+    document.getElementById('imagen-servicio').classList.remove('fade-in', 'show');
+
+    setTimeout(() => {
+        document.getElementById('detalle-servicio').style.display = 'none';
+        document.getElementById('servicios').style.display = 'grid';
+        document.getElementById('servicios').style.opacity = '1';
+    }, 300); 
 }

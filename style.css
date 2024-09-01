@@ -88,6 +88,8 @@ body {
 
 .titulo {
     text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    font-size: 35px;
 }
 
 .container .active {
@@ -150,6 +152,31 @@ body {
     align-items: center;
 }
 
+#services-section h2 {
+    text-align: center;
+    position: relative;
+    top: 0; 
+    transition: top 0.3s ease; 
+}
+
+.title-moved {
+    top: 20px; 
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: start; 
+}
+
+.service.active {
+    display: block;
+    position: relative;
+    top: 0;
+}
+
 .service-row {
     display: flex;
     justify-content: space-between;
@@ -170,11 +197,15 @@ body {
 
 .service-item p {
     text-align: justify;
+    font-size: 22px;
+    font-family: 'Arial', sans-serif;
 }
 
 .service-image {
     width: 100%;
     height: auto;
+    cursor: pointer;
+    margin-top: 15px;
 }
 
 .button-container {
@@ -201,6 +232,94 @@ body {
 .contact-button i {
     margin-right: 8px; 
     font-size: 16px;   
+}
+
+/* DETALLE SERVICIOS */
+#detalle-servicio {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#detalle-servicio.oculto {
+    display: none;
+}
+
+#detalle-servicio h2 {
+    font-size: 2em;
+    color: #c00;
+}
+
+#detalle-servicio p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #555;
+}
+
+#detalle-servicio button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none; 
+    color: white; 
+    padding: 10px 20px;
+    background-color: #b30000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    display: inline-flex; 
+    align-items: center;
+}
+
+.back-button:hover {
+    background-color: #990000; 
+}
+
+.back-button i {
+    margin-right: 8px; 
+    font-size: 16px;
+}
+
+#servicios, #detalle-servicio {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.oculto {
+    display: none;
+    opacity: 0;
+}
+
+#detalle-servicio.mostrar {
+    display: block;
+    opacity: 1;
+}
+
+.detalle-imagen {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.detalle-imagen.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.detalle-imagen.fade-in.show {
+    opacity: 1;
 }
 
 /* SOBRE NOSOTROS */

@@ -46,12 +46,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             collapsibles.forEach(function(btn) {
                 btn.classList.remove("active");
-                btn.nextElementSibling.style.display = "none";
+                btn.nextElementSibling.style.maxHeight = null;
             });
             
             if (!isActive) {
                 this.classList.add("active");
-                content.style.display = "block";
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         });
     });
@@ -156,7 +156,11 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 });
 
 // DETALLE SERVICIO
+let detalleVisible = false;
+
 function expandirServicio(servicio) {
+    if (detalleVisible) return; 
+
     let titulo, descripcion, imagen;
 
     switch(servicio) {
@@ -188,24 +192,53 @@ function expandirServicio(servicio) {
     document.getElementById('descripcion-servicio').textContent = descripcion;
     document.getElementById('imagen-servicio').src = imagen;
 
-    document.getElementById('servicios').style.opacity = '0';
+    const servicios = document.getElementById('servicios');
+    const detalleServicio = document.getElementById('detalle-servicio');
+
+    servicios.style.opacity = '0';
     setTimeout(() => {
-        document.getElementById('servicios').style.display = 'none';
-        document.getElementById('detalle-servicio').style.display = 'block';
-        setTimeout(() => {
-            document.getElementById('detalle-servicio').classList.add('mostrar');
+        servicios.style.display = 'none';
+        detalleServicio.style.display = 'block';
+        requestAnimationFrame(() => {
+            detalleServicio.classList.add('mostrar');
             document.getElementById('imagen-servicio').classList.add('fade-in', 'show');
-        }, 10); 
-    }, 300); 
+        });
+        detalleVisible = true; 
+    }, 300);
 }
 
 function volver() {
-    document.getElementById('detalle-servicio').classList.remove('mostrar');
+    if (!detalleVisible) return;
+
+    const detalleServicio = document.getElementById('detalle-servicio');
+    const servicios = document.getElementById('servicios');
+
+    detalleServicio.classList.remove('mostrar');
     document.getElementById('imagen-servicio').classList.remove('fade-in', 'show');
 
+    detalleServicio.addEventListener('transitionend', () => {
+        detalleServicio.style.display = 'none';
+        servicios.style.display = 'grid';
+        servicios.style.opacity = '1';
+        detalleVisible = false;
+    }, { once: true });
+
     setTimeout(() => {
-        document.getElementById('detalle-servicio').style.display = 'none';
-        document.getElementById('servicios').style.display = 'grid';
-        document.getElementById('servicios').style.opacity = '1';
-    }, 300); 
+        servicios.style.opacity = '1';
+    }, 400);
 }
+
+// OCULTAR EL DETALLE AL CAMBIAR DE SECCION
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (document.getElementById('detalle-servicio').style.display === 'block') {
+            volver(); 
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('detalle-servicio').style.display = 'none';
+    document.getElementById('servicios').style.display = 'grid';
+});
+

@@ -236,8 +236,16 @@ body {
 
 /* DETALLE SERVICIOS */
 #detalle-servicio {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.4s ease;
     text-align: center;
     margin-top: 50px;
+}
+
+#detalle-servicio.mostrar {
+    display: block;
+    opacity: 1;
 }
 
 #detalle-servicio.oculto {
@@ -298,11 +306,6 @@ body {
     opacity: 0;
 }
 
-#detalle-servicio.mostrar {
-    display: block;
-    opacity: 1;
-}
-
 .detalle-imagen {
     width: 100%;
     max-height: 250px;
@@ -358,20 +361,42 @@ body {
     max-width: 80%;
 }
 
+.circle-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b30000, #a30000); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
 /* CONTENIDO DENTRO DE LA PÁGINA Y BOTONES */
 .collapsible {
-    background: linear-gradient(135deg, #b30000, #a30000); 
-    color: #ffffff; 
-    cursor: pointer; 
-    padding: 15px;
-    width: 100%; 
+    background: none;
     border: none;
-    text-align: left; 
-    outline: none; 
+    color: #ffffff; 
     font-size: 19px; 
-    transition: background 0.3s ease;
-    border-radius: 5px; 
-    margin: 5px 0; 
+    text-align: center;
+    cursor: pointer; 
+    outline: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .collapsible:hover {
@@ -386,12 +411,23 @@ body {
     display: none; 
     padding: 15px; 
     background-color: #ecebeb; 
-    border-radius: 0 0 5px 5px; 
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    transition: background-color 0.3s ease;
-    margin: 0 5px;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+    margin: 10px auto;
     color: #000000; 
     font-size: 19px;
+    max-width: 90%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.collapsible.active + .collapsible-content {
+    display: block;
+    max-height: 300px;
+    opacity: 1;
+    padding: 20px;
 }
 
 .collapsible-content.mission-promise {

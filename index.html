@@ -14,11 +14,13 @@
 
 <body>
     
+    <!-- TÍTULO Y LOGO -->
     <div class = "title">
         <h1>MarínTech</h1>
         <img id = "logo" src = "imagenes/logo.png" alt = "MarínTech-Logo">
     </div>
     
+    <!-- BARRA DE NAVEGACIÓN -->
     <div class = "navbar">
         <a href = "#inicio">Inicio</a>
         <a href = "#servicios">Servicios</a>
@@ -27,6 +29,7 @@
         <a href = "#contacto">Contacto</a>
     </div>
 
+    <!-- CARRUSEL DE IMÁGENES -->
     <div class = "carousel-container">
         <img id = "carousel-logo" src = "imagenes/logo.png" alt = "MarínTech-Logo">
         <div class = "carousel">
@@ -39,6 +42,7 @@
     </div>    
 
     <div class = "container">
+
         <!-- INICIO -->
         <div id = "inicio">
             <img src = "imagenes/servicio.jpg" alt = "Imagen-Principal" class = "img_principal">
@@ -62,55 +66,59 @@
             <h1 class = "titulo">Servicios</h1>
 
             <div class = "service-section">
-                <div class = "service-item">
-                    <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" class = "service-image">
-                    <h2>Upgrade</h2>
-                    <p>Asesoramos y realizamos upgrade de componentes, como cambio de discos duros y 
-                        memoria ram, optimizando el rendimiento de tu notebook según tus necesidades.</p>
-                    <div class = "button-container">
-                        <a href = "https://wa.me/978563862?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20cambio%20de%20discos."
-                        target = "_blank" class = "contact-button">
-                            <i class = "fab fa-whatsapp"></i> Contáctanos
-                        </a>
+                <div class = "service-row">
+                    <div class = "service-item">
+                        <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" class = "service-image">
+                        <h2>Upgrade</h2>
+                        <p>Asesoramos y realizamos upgrade de componentes, como cambio de discos duros y memoria ram, 
+                            optimizando el rendimiento de tu notebook según tus necesidades.</p>
+                        <div class = "button-container">
+                            <a href = "https://wa.me/978563862?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20cambio%20de%20discos." 
+                            target = "_blank" class = "contact-button">
+                                <i class="fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class = "service-item">
+                        <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" class = "service-image">
+                        <h2>Limpieza interna</h2>
+                        <p>Realizamos una limpieza interna profunda de tu notebook, eliminando el polvo y residuos 
+                            acumulados para optimizar el rendimiento y extender la vida útil de los componentes.</p>
+                        <div class = "button-container">
+                            <a href = "https://wa.me/978563862?text=Hola,%20quiero%20más%20información%20sobre%20la%20limpieza%20interna." 
+                            target = "_blank" class = "contact-button">
+                                <i class="fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class = "service-item">
+                        <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" class = "service-image">
+                        <h2>Cambio de Pasta</h2>
+                        <p>Reemplazamos la pasta térmica de tu procesador y GPU, asegurando una mejor disipación del calor 
+                            y evitando el sobrecalentamiento que puede dañar tu equipo.</p>
+                        <div class = "button-container">
+                            <a href = "https://wa.me/978563862?text=Hola,%20necesito%20el%20servicio%20de%20cambio%20de%20pasta%20térmica." 
+                            target = "_blank" class = "contact-button">
+                                <i class = "fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class = "service-item">
-                    <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" class = "service-image">
-                    <h2>Limpieza interna</h2>
-                    <p>Realizamos una limpieza interna profunda de tu notebook, eliminando el polvo y residuos
-                        acumulados para optimizar el rendimiento y extender la vida útil de los componentes.</p>
-                    <div class = "button-container">
-                        <a href = "https://wa.me/978563862?text=Hola,%20quiero%20más%20información%20sobre%20la%20limpieza%20interna."
-                        target = "_blank" class = "contact-button">
-                            <i class = "fab fa-whatsapp"></i> Contáctanos
-                        </a>
-                    </div>
-                </div>
-
-                <div class = "service-item">
-                    <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" class = "service-image">
-                    <h2>Cambio de Pasta</h2>
-                    <p>Reemplazamos la pasta térmica de tu procesador y GPU, asegurando una mejor disipación del calor 
-                        y evitando el sobrecalentamiento que puede dañar tu equipo.</p>
-                    <div class = "button-container"></div>
-                        <a href = "https://wa.me/978563862?text=Hola,%20necesito%20el%20servicio%20de%20cambio%20de%20pasta%20térmica."
-                        target = "_blank" class = "contact-button">
-                            <i class = "fab fa-whatsapp"></i> Contáctanos
-                        </a>
-                    </div>
-                </div>
-
-                <div class = "service-item">
-                    <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" class = "service-image">
-                    <h2>Recuperar Datos</h2>
-                    <p>Recuperamos datos y archivos perdidos o dañados de tu disco duro, asegurando la máxima
-                        recuperación posible de información valiosa en tu notebook.</p>
-                    <div class = "button-container">
-                        <a href = "https://wa.me/978563862?text=Hola,%20quiero%20recuperar%20datos%20del%20disco%20duro."
-                        target = "_blank" class = "contact-button">
-                            <i class = "fab fa-whatsapp"></i> Contáctanos
-                        </a>
+                <div class = "service-row service-row-center">
+                    <div class = "service-item">
+                        <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" class = "service-image">
+                        <h2>Recuperar Datos</h2>
+                        <p>Recuperamos datos y archivos perdidos o dañados de tu disco duro, 
+                            asegurando la máxima recuperación posible de información valiosa en tu notebook.</p>
+                        <div class = "button-container">
+                            <a href = "https://wa.me/978563862?text=Hola,%20quiero%20recuperar%20datos%20del%20disco%20duro." 
+                            target = "_blank" class = "contact-button">
+                                <i class = "fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,18 +204,10 @@
             </form>
 
         </div>
-
     </div>
 
     <!-- FUNCIONES -->
     <script src = "script.js"></script>
-    
-    <!-- BOTÓN DE CHAT 
-        <div class = "chatbot-button" onclick = "openChatbot()">
-            <i class = "fas fa-comment-dots"></i>
-        </div>
-        -->
 
-        
 </body>
 </html>

@@ -327,9 +327,8 @@ body {
 
 /* SOBRE NOSOTROS */
 .about-section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-align: center;
-    padding: 20px;
     background-color: #e0e0e0; 
     border-radius: 10px;
     justify-content: center;
@@ -351,7 +350,7 @@ body {
     gap: 60px; 
     flex-wrap: nowrap;
     margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .circle {

@@ -37,21 +37,23 @@ logo.addEventListener('click', function() {
 
 // FUNCIÓN TEXTOS DESPLEGABLES
 document.addEventListener("DOMContentLoaded", function() {
-    const collapsibles = document.querySelectorAll(".collapsible");
-    
-    collapsibles.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const content = this.nextElementSibling;
+    const circles = document.querySelectorAll(".circle");
+
+    circles.forEach(function(circle) {
+        circle.addEventListener("click", function() {
+            const content = this.querySelector('.collapsible-content');
             const isActive = this.classList.contains("active");
 
-            collapsibles.forEach(function(btn) {
+            // Cierra todas las secciones activas
+            circles.forEach(function(btn) {
                 btn.classList.remove("active");
-                btn.nextElementSibling.style.maxHeight = null;
+                btn.querySelector('.collapsible-content').style.display = "none";
             });
-            
+
+            // Abre la sección si no estaba activa
             if (!isActive) {
                 this.classList.add("active");
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.display = "block";
             }
         });
     });

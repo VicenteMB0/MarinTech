@@ -330,9 +330,11 @@ body {
     margin-bottom: 40px;
     text-align: center;
     padding: 20px;
-    background-color: #c40000; 
+    background-color: #e0e0e0; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: nowrap;
 }
 
 .about-title {
@@ -363,42 +365,40 @@ body {
 
 .circle-container {
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+    justify-content: center; 
+    gap: 60px; 
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #b30000, #a30000); 
+    background: linear-gradient(135deg, #b30000, #a30000);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.circle-content {
+    font-size: 19px;
+    font-weight: bold;
 }
 
 .circle:hover {
     transform: scale(1.1);
 }
-/* CONTENIDO DENTRO DE LA PÁGINA Y BOTONES */
-.collapsible {
-    background: none;
-    border: none;
-    color: #ffffff; 
-    font-size: 19px; 
-    text-align: center;
-    cursor: pointer; 
-    outline: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
+/* CONTENIDO DENTRO DE LA PÁGINA Y BOTONES */
 .collapsible:hover {
     background: linear-gradient(135deg, #a30000, #990000); 
 }
@@ -408,26 +408,29 @@ body {
 }
 
 .collapsible-content {
-    display: none; 
-    padding: 15px; 
-    background-color: #ecebeb; 
+    width: 100%;
+    max-width: 600px;
+    background-color: #f4f4f4;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
-    margin: 10px auto;
-    color: #000000; 
-    font-size: 19px;
-    max-width: 90%;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    margin-top: 20px;
+    text-align: justify;
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    flex-direction: grid;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.collapsible.active + .collapsible-content {
+.circle.active .collapsible-content {
     display: block;
-    max-height: 300px;
-    opacity: 1;
-    padding: 20px;
 }
 
 .collapsible-content.mission-promise {

@@ -35,12 +35,15 @@
             <button class = "prev" onclick = "changeSlide(-1)">&#10094;</button>
             <div class = "slide">
                 <img id = "carousel-image" src = "imagenes/hdd.jpeg" alt = "Upgrade de componentes">
+                <div class = "service-label">
+                    <span id = "service-title">Upgrade de componentes</span>
+                </div>
             </div>
-            <button class = "next" onclick = "changeSlide(1)">&#10095;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
-
-        <div class = "carousel-indicators"></div>
-    </div>   
+    
+        <div class="carousel-indicators"></div>
+    </div>      
 
     <div class = "container">
 
@@ -162,17 +165,17 @@
         <div id = "sobre-nosotros" class = "about-section">
             <h1 class = "titulo">Sobre Nosotros</h1>
 
-                <div class = "circle-container">
-                    <div class = "circle">
-                        <div class = "circle-content">Misión</div>
+                <div class = "card-container">
+                    <div class = "card">
+                        <div class = "card-header">Misión</div>
                         <div class = "collapsible-content mission-promise">
                             <p>En MarínTech, creemos que todos merecen acceso a un soporte técnico confiable y asequible para sus notebooks, 
                                 sin comprometer la calidad o la seguridad de su equipo.</p>
                         </div>
                     </div>
 
-                    <div class = "circle">
-                        <div class = "circle-content">Promesa</div>
+                    <div class = "card">
+                        <div class = "card-header">Promesa</div>
                         <div class = "collapsible-content mission-promise">
                             <p>En MarínTech, garantizamos la confianza de nuestros clientes a través de un servicio de alta calidad. 
                                 Gracias a nuestra experiencia, podemos simplificar los procesos y ofrecer precios justos que 
@@ -180,8 +183,8 @@
                         </div>
                     </div>
 
-                    <div class = "circle">
-                        <div class = "circle-content">Servicios</div>
+                    <div class = "card">
+                        <div class = "card-header">Servicios</div>
                         <div class = "collapsible-content services">
                             <p>Actualmente, en MarínTech ofrecemos los siguientes servicios especializados en notebooks:</p>
                             <ul>

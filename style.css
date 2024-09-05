@@ -49,7 +49,6 @@ body {
     text-align: center;
     background-color: #e0e0e0;
     font-size: 20px;
-    color: #333333;
     height: 150px; 
 }
 
@@ -355,39 +354,36 @@ body {
     max-width: 80%;
 }
 
-.circle-container {
+.card-container {
     display: flex;
-    justify-content: center; 
-    gap: 60px; 
-    flex-wrap: nowrap;
-    margin-bottom: 40px;
-    margin-top: 60px;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
-.circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #b30000, #a30000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.card {
+    width: 300px;
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #b30000, #a30000);
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
     color: white;
     text-align: center;
-    position: relative;
-    z-index: 1;
+    border-radius: 10px 10px 0 0;
 }
 
-.circle-content {
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.circle:hover {
-    transform: scale(1.1);
+.card:hover {
+    transform: scale(1.05);
 }
 
 /* CONTENIDO DENTRO DE LA PÁGINA Y BOTONES */
@@ -400,40 +396,45 @@ body {
 }
 
 .collapsible-content {
-    position: absolute;
-    top: 110%; 
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    width: 80%;
-    max-width: 800px; 
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #f4f4f4;
-    z-index: 10;
+    margin-left: 43px;
+    display: none;
+    text-align: justify;
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #ddd;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.card.active .collapsible-content {
+    display: block;
+    opacity: 1;
+    max-height: 600px; 
+}
+
+.collapsible-content p, .card p {
+    text-align: center; 
+    margin: 0;
+    font-size: 22px;
+}
+
+.mission-promise p {
+    text-align: center;
+}
+
+.services p, .services ul {
     text-align: justify;
 }
 
-.circle.active .collapsible-content {
-    display: block;
+.collapsible-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-
-.collapsible-content.mission-promise {
-    text-align: center; 
-}
-
-.collapsible-content.services {
-    text-align: left; 
-}
-
-.collapsible-content.mission-promise p {
-    margin: 0; 
-}
-
-.collapsible-content.services p {
-    margin: 0; 
+.collapsible-content.services ul {
+    text-align: left;
 }
 
 /* CARRUSEL */
@@ -476,6 +477,26 @@ body {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
 }
 
+.service-label {
+    position: absolute;
+    top: 30px; 
+    left: 20px; 
+    background-color: rgba(153, 0, 0, 0.8); 
+    color: white;
+    padding: 15px 15px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 130px;
+}
+
+.service-label span {
+    display: block;
+    white-space: nowrap;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -499,11 +520,11 @@ body {
 }
 
 .next {
-    right: 40px; 
+    right: 80px; 
 }
 
 .prev {
-    left: 40px; 
+    left: 80px; 
 }
 
 .prev:hover, .next:hover {

@@ -2,7 +2,7 @@ const navbarLinks = document.querySelectorAll('.navbar a');
 const sections = document.querySelectorAll('.container > div');
 const carouselContainer = document.querySelector('.carousel-container');
 
-// FUNCIÓN MOSTRAR LA SECCIÓN ACTIVA
+// MOSTRAR LA SECCIÓN ACTIVA EN LA BARRA DE NAVEGACIÓN
 function showSection(sectionId) {
     sections.forEach(section => {
         if (section.id === sectionId) {
@@ -55,32 +55,46 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// FUNCIÓN CLIC EN EL LOGO VUELVE AL INICIO
+// CLIC EN EL LOGO VUELVE AL INICIO
 showSection('inicio');
 const logo = document.getElementById('logo');
 logo.addEventListener('click', function() {
     showSection('inicio');
 });
 
-// FUNCIÓN TEXTOS DESPLEGABLES
+// TEXTOS DESPLEGABLES - SECCIÓN SOBRE NOSOTROS
 document.addEventListener("DOMContentLoaded", function() {
-    const circles = document.querySelectorAll(".circle");
+    const cards = document.querySelectorAll(".card");
 
-    circles.forEach(function(circle) {
-        circle.addEventListener("click", function() {
-            const content = this.querySelector('.collapsible-content');
+    // Asegúrate de que ninguna carta esté activa al cargar la página
+    cards.forEach(function(card) {
+        card.classList.remove("active");
+        const content = card.querySelector('.collapsible-content');
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+        content.style.display = 'none'; 
+    });
+
+    // Evento de clic para las tarjetas
+    cards.forEach(function(card) {
+        card.addEventListener("click", function() {
             const isActive = this.classList.contains("active");
 
-            // Cierra todas las secciones activas
-            circles.forEach(function(btn) {
-                btn.classList.remove("active");
-                btn.querySelector('.collapsible-content').style.display = "none";
+            // Cierra todas las tarjetas activas
+            cards.forEach(function(c) {
+                c.classList.remove("active");
+                c.querySelector('.collapsible-content').style.maxHeight = '0';
+                c.querySelector('.collapsible-content').style.opacity = '0';
+                c.querySelector('.collapsible-content').style.display = 'none';
             });
 
-            // Abre la sección si no estaba activa
+            // Abre la tarjeta si no estaba activa
             if (!isActive) {
                 this.classList.add("active");
-                content.style.display = "block";
+                const content = this.querySelector('.collapsible-content');
+                content.style.display = 'block';
+                content.style.maxHeight = content.scrollHeight + "px"; 
+                content.style.opacity = '1';
             }
         });
     });
@@ -95,23 +109,35 @@ const images = [
     "imagenes/recuperar_datos.jpeg"
 ];
 
-// CAMBIAR LA IMAGEN Y ACTUALIZAR LOS INDICADORES
+const serviceTitles = [
+    "Upgrade de componentes",
+    "Limpieza de hardware",
+    "Cambio de pasta térmica",
+    "Recuperación de datos"
+];
+
+// Función para cambiar la imagen y el título
 function changeSlide(direction) {
     const carouselImage = document.getElementById("carousel-image");
-    carouselImage.style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out"; 
+    const serviceTitle = document.getElementById("service-title");
+    
+    // Transiciones
+    carouselImage.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out"; 
     carouselImage.style.opacity = 0; 
     carouselImage.style.transform = "scale(0.95)";
 
+    // Cambiar imagen y título
     setTimeout(() => {
         slideIndex = (slideIndex + direction + images.length) % images.length;
         carouselImage.src = images[slideIndex];
+        serviceTitle.textContent = serviceTitles[slideIndex]; 
         updateIndicators();  
         carouselImage.style.opacity = 1; 
         carouselImage.style.transform = "scale(1)";
-    }, 1000);
+    }, 500); 
 }
 
-// ACTUALIZAR LOS INDICADORES ACTIVOS
+// Actualizar los indicadores
 function updateIndicators() {
     const indicators = document.querySelectorAll('.carousel-indicators div');
     indicators.forEach((indicator, index) => {
@@ -122,17 +148,22 @@ function updateIndicators() {
         }
     });
 }
-
+    
 // CAMBIAR LA IMAGEN Y ACTUALIZAR LOS INDICADORES
 function changeSlide(direction) {
     const carouselImage = document.getElementById("carousel-image");
+    const serviceTitle = document.getElementById("service-title");
+    
+    // Transiciones
     carouselImage.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out"; 
     carouselImage.style.opacity = 0; 
     carouselImage.style.transform = "scale(0.95)";
 
+    // Cambiar imagen y título
     setTimeout(() => {
         slideIndex = (slideIndex + direction + images.length) % images.length;
         carouselImage.src = images[slideIndex];
+        serviceTitle.textContent = serviceTitles[slideIndex]; 
         updateIndicators();  
         carouselImage.style.opacity = 1; 
         carouselImage.style.transform = "scale(1)";
@@ -142,19 +173,23 @@ function changeSlide(direction) {
 // CAMBIAR LA IMAGEN AL HACER CLIC EN UN INDICADOR
 function goToSlide(index) {
     const carouselImage = document.getElementById("carousel-image");
+    const serviceTitle = document.getElementById("service-title");
+
+    // Transiciones
     carouselImage.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out"; 
     carouselImage.style.opacity = 0; 
     carouselImage.style.transform = "scale(0.95)";
 
+    // Cambiar imagen y título
     setTimeout(() => {
         slideIndex = index;
         carouselImage.src = images[slideIndex];
+        serviceTitle.textContent = serviceTitles[slideIndex]; // Cambiar título del servicio
         updateIndicators();
         carouselImage.style.opacity = 1; 
         carouselImage.style.transform = "scale(1)";
     }, 500); 
 }
-
 // INTERVALO PARA CAMBIAR LA IMAGEN
 setInterval(() => {
     changeSlide(1); 

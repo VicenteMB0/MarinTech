@@ -39,6 +39,36 @@ body {
     display: none; 
 }
 
+/* REDES SOCIALES */
+.redes-sociales {
+    position: fixed; 
+    right: 20px;
+    top: 173px; 
+    display: flex;
+    gap: 10px;
+    z-index: 1001;
+}
+
+/* BOTONES DE REDES SOCIALES */
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
 /* TÍTULO */
 .title {
     display: flex;
@@ -481,7 +511,8 @@ body {
     position: absolute;
     top: 30px; 
     left: 20px; 
-    background-color: rgba(153, 0, 0, 0.8); 
+    background-color: rgba(51, 51, 51, 0.8); 
+    box-shadow: 0 1px 1px 1px rgba(255, 255, 255, 0.5);
     color: white;
     padding: 15px 15px;
     border-radius: 5px;
@@ -489,7 +520,7 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    margin-left: 130px;
+    margin-left: 140px;
 }
 
 .service-label span {

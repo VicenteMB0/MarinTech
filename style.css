@@ -11,6 +11,11 @@ body {
     display: flex;
     justify-content: center;
     background-color: #333333; 
+    position: relative; 
+    top: 0px; 
+    width: 100%; 
+    z-index: 1000; 
+    transition: top 0.9s ease-in-out;
 }
 
 .navbar a {
@@ -37,22 +42,32 @@ body {
 /* TÍTULO */
 .title {
     display: flex;
-    align-items: center;       
-    justify-content: center;   
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-    position: relative;       
-    text-align: center; 
-    background-color: #e0e0e0; 
+    position: relative;
+    text-align: center;
+    background-color: #e0e0e0;
     font-size: 20px;
     color: #333333;
+    height: 150px; 
+}
+
+.title #titulo {
+    width: 300px; 
+    height: auto; 
+}
+
+.title #logo {
+    position: absolute;
+    left: 100px; 
+    width: 180px;
+    height: 180px;
+    object-fit: scale-down;
 }
 
 .title img {
-    position: absolute;
-    left: 100px; 
-    width: 110px; 
-    height: 110px; 
-    object-fit: cover; 
+    display: block;
 }
 
 /* IMAGEN PRINCIPAL Y LOGO*/

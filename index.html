@@ -9,7 +9,7 @@
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="//code.tidio.co/aio2fjl11znecoi6tbqpeqmxjrzmrfzp.js" async></script>
+    <script src = "//code.tidio.co/aio2fjl11znecoi6tbqpeqmxjrzmrfzp.js" async></script>
 </head>
 
 <body>
@@ -31,7 +31,6 @@
 
     <!-- CARRUSEL DE IMÁGENES -->
     <div class = "carousel-container">
-        <img id = "carousel-logo" src = "imagenes/logo.png" alt = "MarínTech-Logo">
         <div class = "carousel">
             <button class = "prev" onclick = "changeSlide(-1)">&#10094;</button>
             <div class = "slide">
@@ -39,7 +38,9 @@
             </div>
             <button class = "next" onclick = "changeSlide(1)">&#10095;</button>
         </div>
-    </div>    
+
+        <div class = "carousel-indicators"></div>
+    </div>   
 
     <div class = "container">
 
@@ -67,8 +68,10 @@
 
             <div class = "service-section">
                 <div class = "service-row">
+
+                    <!-- UPGRADE DE COMPONENTES -->
                     <div class = "service-item">
-                        <img src = "imagenes/hdd.jpeg" alt = "Cambio de Discos Duros" 
+                        <img src = "imagenes/hdd.jpeg" alt = "Upgrade de componentes" 
                         onclick = "expandirServicio('servicio1')" class = "service-image">
                         <h2>Upgrade</h2>
                         <p>Asesoramos y realizamos upgrade de componentes, como cambio de discos duros y memoria ram, 
@@ -81,6 +84,7 @@
                         </div>
                     </div>
 
+                    <!-- LIMPIEZA DE HARDWARE -->
                     <div class = "service-item">
                         <img src = "imagenes/limpieza_hardware.jpeg" alt = "Limpieza de Hardware" 
                         onclick = "expandirServicio('servicio2')" class = "service-image">
@@ -90,11 +94,12 @@
                         <div class = "button-container">
                             <a href = "https://wa.me/978563862?text=Hola,%20quiero%20más%20información%20sobre%20la%20limpieza%20interna." 
                             target = "_blank" class = "contact-button">
-                                <i class="fab fa-whatsapp"></i> Contáctanos
+                                <i class = "fab fa-whatsapp"></i> Contáctanos
                             </a>
                         </div>
                     </div>
 
+                    <!-- CAMBIO DE PASTA TÉRMICA -->
                     <div class = "service-item">
                         <img src = "imagenes/pasta_termica.jpeg" alt = "Cambio de Pasta Térmica" 
                         onclick = "expandirServicio('servicio3')" class = "service-image">
@@ -104,13 +109,28 @@
                         <div class = "button-container">
                             <a href = "https://wa.me/978563862?text=Hola,%20necesito%20el%20servicio%20de%20cambio%20de%20pasta%20térmica." 
                             target = "_blank" class = "contact-button">
-                                <i class = "fab fa-whatsapp"></i> Contáctanos
+                                <i class="fab fa-whatsapp"></i> Contáctanos
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class = "service-row service-row-center">
+                <div class="service-row">
+
+                    <!-- PROXIMAMENTE -->
+                    <div class = "service-item">
+                        <img src = "imagenes/proximamente.jpg" alt = "Proximamente" 
+                        class = "service-image">
+                        <h2>Nuevo servicio</h2>
+                        <p>Más adelante tendrán información sobre este servicio.</p>
+                        <div class = "button-container">
+                            <a target = "_blank" class = "contact-button">
+                                <i class = "fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RECUPERAR DATOS -->
                     <div class = "service-item">
                         <img src = "imagenes/recuperar_datos.jpeg" alt = "Recuperar Datos del Disco Duro" 
                         onclick = "expandirServicio('servicio4')" class = "service-image">
@@ -120,63 +140,75 @@
                         <div class = "button-container">
                             <a href = "https://wa.me/978563862?text=Hola,%20quiero%20recuperar%20datos%20del%20disco%20duro." 
                             target = "_blank" class = "contact-button">
-                                <i class = "fab fa-whatsapp"></i> Contáctanos
+                                <i class="fab fa-whatsapp"></i> Contáctanos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PROXIMAMENTE 2 -->
+                    <div class = "service-item">
+                        <img src = "imagenes/proximamente.jpg" alt = "Proximamente" class = "service-image">
+                        <h2>Nuevo servicio</h2>
+                        <p>Más adelante tendrán información sobre este servicio.</p>
+                        <div class="button-container">
+                            <a target = "_blank" class = "contact-button">
+                                <i class="fab fa-whatsapp"></i> Contáctanos
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <!-- DETALLE DE LOS SERVICIOS -->
         <section id = "detalle-servicio" class = "oculto">
-            <img id="imagen-servicio" src = "" alt = "" class = "detalle-imagen">
-            <h2 id = "titulo-servicio"></h2>
-            <p id = "descripcion-servicio"></p>
+        <img id="imagen-servicio" src = "" alt = "" class = "detalle-imagen">
+        <h2 id = "titulo-servicio"></h2>
+        <p id = "descripcion-servicio"></p>
             <button class = "back-button" onclick = "volver()"> <i class="fas fa-arrow-left"></i> Volver</button>
         </section>
-        
+                
         <!-- SOBRE NOSOTROS -->
         <div id = "sobre-nosotros" class = "about-section">
             <h1 class = "titulo">Sobre Nosotros</h1>
 
-            <div class = "circle-container">
-                <div class = "circle">
-                    <div class = "circle-content">Misión</div>
-                    <div class = "collapsible-content mission-promise">
-                        <p>En MarínTech, creemos que todos merecen acceso a un soporte técnico confiable y asequible para sus notebooks, 
-                            sin comprometer la calidad o la seguridad de su equipo.</p>
+                <div class = "circle-container">
+                    <div class = "circle">
+                        <div class = "circle-content">Misión</div>
+                        <div class = "collapsible-content mission-promise">
+                            <p>En MarínTech, creemos que todos merecen acceso a un soporte técnico confiable y asequible para sus notebooks, 
+                                sin comprometer la calidad o la seguridad de su equipo.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class = "circle">
-                    <div class = "circle-content">Promesa</div>
-                    <div class = "collapsible-content mission-promise">
-                        <p>En MarínTech, garantizamos la confianza de nuestros clientes a través de un servicio de alta calidad. 
-                            Gracias a nuestra experiencia, podemos simplificar los procesos y ofrecer precios justos que 
-                            reflejan el verdadero valor del trabajo realizado.</p>
+                    <div class = "circle">
+                        <div class = "circle-content">Promesa</div>
+                        <div class = "collapsible-content mission-promise">
+                            <p>En MarínTech, garantizamos la confianza de nuestros clientes a través de un servicio de alta calidad. 
+                                Gracias a nuestra experiencia, podemos simplificar los procesos y ofrecer precios justos que 
+                                reflejan el verdadero valor del trabajo realizado.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class = "circle">
-                    <div class = "circle-content">Servicios</div>
-                    <div class = "collapsible-content services">
-                        <p>Actualmente, en MarínTech ofrecemos los siguientes servicios especializados en notebooks:</p>
-                        <ul>
-                            <li>Cambios de discos duros</li>
-                            <li>Recuperación de datos</li>
-                            <li>Limpieza interna</li>
-                            <li>Cambio de pasta térmica</li>
-                            <li>Mejoras de hardware</li>
-                        </ul>
-                        <p>Nos enfocamos en notebooks para asegurar la más alta calidad, y pronto expandiremos nuestros servicios a 
-                            computadores de escritorio conforme adquiramos más experiencia en este campo.</p>
+                    <div class = "circle">
+                        <div class = "circle-content">Servicios</div>
+                        <div class = "collapsible-content services">
+                            <p>Actualmente, en MarínTech ofrecemos los siguientes servicios especializados en notebooks:</p>
+                            <ul>
+                                <li>Cambios de discos duros</li>
+                                <li>Recuperación de datos</li>
+                                <li>Limpieza interna</li>
+                                <li>Cambio de pasta térmica</li>
+                                <li>Mejoras de hardware</li>
+                            </ul>
+                            <p>Nos enfocamos en notebooks para asegurar la más alta calidad, y pronto expandiremos nuestros servicios a 
+                                computadores de escritorio conforme adquiramos más experiencia en este campo.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-         <!-- CLIENTES -->
+                
+        <!-- CLIENTES -->
         <div id = "clientes">
             <h1 class = "titulo"> Clientes </h1>
             <p> Información de los clientes. </p>

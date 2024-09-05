@@ -1,5 +1,6 @@
 const navbarLinks = document.querySelectorAll('.navbar a');
 const sections = document.querySelectorAll('.container > div');
+const carouselContainer = document.querySelector('.carousel-container');
 
 // FUNCIÓN MOSTRAR LA SECCIÓN ACTIVA
 function showSection(sectionId) {
@@ -10,6 +11,14 @@ function showSection(sectionId) {
             section.style.display = 'none';
         }
     });
+
+    // Mostrar el carrusel solo si estamos en la sección de "Inicio"
+    if (sectionId === 'inicio') {
+        carouselContainer.style.display = 'block';
+    } else {
+        carouselContainer.style.display = 'none';
+    }
+
     navbarLinks.forEach(nav => {
         if (nav.getAttribute('href').substring(1) === sectionId) {
             nav.classList.add('active');
@@ -26,6 +35,11 @@ navbarLinks.forEach(link => {
         const sectionId = this.getAttribute('href').substring(1);
         showSection(sectionId);
     });
+});
+
+// Mostrar solo la sección de "Inicio" al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('inicio');
 });
 
 // FUNCIÓN CLIC EN EL LOGO VUELVE AL INICIO
@@ -59,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// CARRUSEL
+// CARRUSEL 
 let slideIndex = 0;
 const images = [
     "imagenes/hdd.jpeg",
@@ -68,7 +82,7 @@ const images = [
     "imagenes/recuperar_datos.jpeg"
 ];
 
-// CAMBIAR LA IMAGEN PARA LA DERECHA
+// CAMBIAR LA IMAGEN Y ACTUALIZAR LOS INDICADORES
 function changeSlide(direction) {
     const carouselImage = document.getElementById("carousel-image");
     carouselImage.style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out"; 
@@ -78,43 +92,71 @@ function changeSlide(direction) {
     setTimeout(() => {
         slideIndex = (slideIndex + direction + images.length) % images.length;
         carouselImage.src = images[slideIndex];
+        updateIndicators();  
         carouselImage.style.opacity = 1; 
         carouselImage.style.transform = "scale(1)";
     }, 1000);
 }
 
-// INTERVALO PARA CAMBIAR LA IMAGEN
-setInterval(() => {
-    changeSlide(1); 
-}, 5000); 
-
-
-// AJUSTES AL CARRUSEL
-function showSection(sectionId) {
-    sections.forEach(section => {
-        if (section.id === sectionId) {
-            section.style.display = 'block';
+// ACTUALIZAR LOS INDICADORES ACTIVOS
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.carousel-indicators div');
+    indicators.forEach((indicator, index) => {
+        if (index === slideIndex) {
+            indicator.classList.add('active');
         } else {
-            section.style.display = 'none';
-        }
-    });
-
-    // Mostrar el carrusel solo en la sección 'inicio'
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (sectionId === 'inicio') {
-        carouselContainer.style.display = 'flex';
-    } else {
-        carouselContainer.style.display = 'none';
-    }
-
-    navbarLinks.forEach(nav => {
-        if (nav.getAttribute('href').substring(1) === sectionId) {
-            nav.classList.add('active');
-        } else {
-            nav.classList.remove('active');
+            indicator.classList.remove('active');
         }
     });
 }
+
+// CAMBIAR LA IMAGEN Y ACTUALIZAR LOS INDICADORES
+function changeSlide(direction) {
+    const carouselImage = document.getElementById("carousel-image");
+    carouselImage.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out"; 
+    carouselImage.style.opacity = 0; 
+    carouselImage.style.transform = "scale(0.95)";
+
+    setTimeout(() => {
+        slideIndex = (slideIndex + direction + images.length) % images.length;
+        carouselImage.src = images[slideIndex];
+        updateIndicators();  
+        carouselImage.style.opacity = 1; 
+        carouselImage.style.transform = "scale(1)";
+    }, 500); 
+}
+
+// CAMBIAR LA IMAGEN AL HACER CLIC EN UN INDICADOR
+function goToSlide(index) {
+    const carouselImage = document.getElementById("carousel-image");
+    carouselImage.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out"; 
+    carouselImage.style.opacity = 0; 
+    carouselImage.style.transform = "scale(0.95)";
+
+    setTimeout(() => {
+        slideIndex = index;
+        carouselImage.src = images[slideIndex];
+        updateIndicators();
+        carouselImage.style.opacity = 1; 
+        carouselImage.style.transform = "scale(1)";
+    }, 500); 
+}
+
+// INTERVALO PARA CAMBIAR LA IMAGEN
+setInterval(() => {
+    changeSlide(1); 
+}, 7000); 
+
+// INICIALIZAR INDICADORES
+document.addEventListener('DOMContentLoaded', () => {
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    images.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+    updateIndicators();
+});
 
 // ALERTA AL ENVIAR UN MENSAJE DEL FORMULARIO
 document.getElementById('contact-form').addEventListener('submit', function(event) {

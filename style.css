@@ -184,10 +184,6 @@ body {
     margin-bottom: 20px;
 }
 
-.service-row-center {
-    justify-content: center; 
-}
-
 .service-item {
     flex: 1;
     max-width: 300px;
@@ -389,30 +385,25 @@ body {
 }
 
 .collapsible-content {
-    width: 100%;
-    max-width: 600px;
-    background-color: #f4f4f4;
+    position: absolute;
+    top: 110%; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    width: 80%;
+    max-width: 800px; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none;
-    margin-top: 20px;
+    background-color: #f4f4f4;
+    z-index: 10;
     text-align: justify;
-    position: absolute;
-    top: 100%; 
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    flex-direction: grid;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
 }
 
 .circle.active .collapsible-content {
     display: block;
 }
+
 
 .collapsible-content.mission-promise {
     text-align: center; 
@@ -434,6 +425,7 @@ body {
 .carousel-container {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: #e0e0e0; 
     padding: 10px;
@@ -442,13 +434,6 @@ body {
     margin-left: auto; 
     margin-right: auto; 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-}
-
-#carousel-logo {
-    width: 80px;
-    height: 80px;
-    margin-left: 20px;
-    object-fit: cover; 
 }
 
 .carousel {
@@ -473,7 +458,7 @@ body {
     height: auto;
     border-radius: 10px;
     object-fit: cover; 
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out; 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
 }
 
 .prev, .next {
@@ -508,6 +493,26 @@ body {
 
 .prev:hover, .next:hover {
     background-color: rgba(163, 0, 0, 0.8); 
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators div {
+    width: 15px;
+    height: 15px;
+    background-color: #a30000;
+    border-radius: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators div.active {
+    background-color: #ff0000;
 }
 
 /* FORMULARIO DE CONTACTO */

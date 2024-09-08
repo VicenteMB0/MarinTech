@@ -42,19 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSection('inicio');
 });
 
-// FUNCIÓN PARA FIJAR LA BARRA CUANDO SE HACE SCROLL
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    const stickyPosition = navbar.offsetTop;
-
-    if (window.pageYOffset > stickyPosition) {
-        navbar.style.position = 'fixed';
-        navbar.style.top = '0';
-    } else {
-        navbar.style.position = 'relative';
-    }
-});
-
 // CLIC EN EL LOGO VUELVE AL INICIO
 showSection('inicio');
 const logo = document.getElementById('logo');

@@ -41,7 +41,7 @@ body {
 
 /* REDES SOCIALES */
 .redes-sociales {
-    position: fixed; 
+    position: absolute; 
     right: 20px;
     top: 173px; 
     display: flex;

@@ -668,3 +668,36 @@ button[type = "submit"]:hover {
 .chatbot-button:hover {
     background-color: #d62839; 
 }
+
+/* VOLVER AL INCIO */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transform: translateY(30px); 
+    display: none; 
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px; /* Tamaño del icono */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+#scrollToTopBtn.show {
+    display: block; 
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+#scrollToTopBtn i {
+    margin: 0; 
+}

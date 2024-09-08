@@ -321,3 +321,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('servicios').style.display = 'grid';
 });
 
+// BOTÓN QUE VUELVE AL INCIO AL SCROLLEAR
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Mostrar el botón cuando el usuario haga scroll hacia abajo
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+// Función para subir al inicio de la página
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+});

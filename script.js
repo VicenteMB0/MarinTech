@@ -1,4 +1,5 @@
 const navbarLinks = document.querySelectorAll('.navbar a');
+const footerLinks = document.querySelectorAll('.footer-section a');
 const sections = document.querySelectorAll('.container > div');
 const carouselContainer = document.querySelector('.carousel-container');
 
@@ -28,8 +29,8 @@ function showSection(sectionId) {
     });
 }
 
-// CLIC A CADA SECCIÓN DE LA BARRA DE NAVEGACIÓN
-navbarLinks.forEach(link => {
+// CLIC A CADA SECCIÓN DE LA BARRA DE NAVEGACIÓN Y PIE DE PÁGINA
+[...navbarLinks, ...footerLinks].forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault(); 
         const sectionId = this.getAttribute('href').substring(1);
@@ -171,7 +172,7 @@ function goToSlide(index) {
     setTimeout(() => {
         slideIndex = index;
         carouselImage.src = images[slideIndex];
-        serviceTitle.textContent = serviceTitles[slideIndex]; // Cambiar título del servicio
+        serviceTitle.textContent = serviceTitles[slideIndex];
         updateIndicators();
         carouselImage.style.opacity = 1; 
         carouselImage.style.transform = "scale(1)";
